@@ -2,75 +2,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visually | Ideas & Design</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
+  <title>Visually | Green Design</title>  <style>
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      color: #202735;
-      background: #f5f6fa;
+      color: #20352b;
+      background: #f7faf7;
+      line-height: 1.6;
     }
+
     header {
-      padding: 24px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 7%;
       background: white;
-      text-align: center;
     }
-    header h1 { margin: 0; letter-spacing: 3px; }
-    header p { color: #687386; }
+
+    .logo {
+      color: #247448;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    header a {
+      color: #247448;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .hero {
-      padding: 65px 20px;
+      padding: 75px 8%;
       text-align: center;
-      background: #e4eaff;
+      background: #e5f2e8;
     }
-    .hero h2 { font-size: 34px; }
-    .hero p { line-height: 1.7; }
+
+    .hero .tag {
+      color: #247448;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+      margin: 18px auto;
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+    }
+
+    .hero h1 span {
+      color: #27804c;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #52665a;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      background: #247448;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .projects {
-      padding: 30px 18px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
+      padding: 55px 6%;
     }
+
+    .section-label {
+      color: #27804c;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .projects h2 {
+      margin: 8px 0 25px;
+      font-size: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
     .card {
+      overflow: hidden;
       background: white;
-      border-radius: 14px;
-      padding: 18px;
-      margin: 18px 0;
-      box-shadow: 0 4px 15px #0000000a;
+      border-radius: 16px;
+      border: 1px solid #e3ebe4;
     }
+
     .card img {
-      width: 100%;
-      border-radius: 10px;
       display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
     }
-    footer {
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #247448;
+    }
+
+    .card p {
+      color: #637268;
+      font-size: 15px;
+    }
+
+    .about {
+      margin: 10px 6% 50px;
+      padding: 35px 25px;
       text-align: center;
-      padding: 25px;
-      color: #687386;
+      background: #edf5ee;
+      border-radius: 16px;
     }
-  </style>
-</head>
-<body>
+
+    .about h2 {
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: auto;
+      color: #52665a;
+    }
+
+    footer {
+      padding: 25px;
+      background: #203d2c;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style></head><body>
   <header>
-    <h1>VISUALLY</h1>
-    <p>Ideas • Design • Creativity</p>
+    <div class="logo">VISUALLY.</div>
+    <a href="#projects">Our Projects ↗</a>
   </header>  <section class="hero">
-    <h2>See Ideas Differently.</h2>
-    <p>Welcome to our visual world. Explore ideas, creativity and design.</p>
-  </section>  <section class="projects">
-    <h2>Our Projects</h2><div class="card">
-  <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1000&q=80" alt="Modern architecture">
-  <h3>Architecture & Design</h3>
-  <p>Discover creative ideas and inspiring visual projects.</p>
+    <p class="tag">DESIGN • NATURE • CREATIVITY</p>
+    <h1>Building a <span>Greener</span> Visual World.</h1>
+    <p>
+      Explore inspiring architecture, thoughtful spaces
+      and creative ideas for a better tomorrow.
+    </p>
+    <a class="button" href="#projects">Explore Projects ↓</a>
+  </section>  <section class="projects" id="projects">
+    <p class="section-label">OUR PORTFOLIO</p>
+    <h2>Ideas Into Reality.</h2><div class="grid">
+  <article class="card">
+    <img
+      src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
+      alt="Modern architecture"
+    >
+    <div class="card-content">
+      <h3>Modern Architecture</h3>
+      <p>Exploring inspiring buildings, forms and creative spaces.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <img
+      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+      alt="Green forest and nature"
+    >
+    <div class="card-content">
+      <h3>Nature & Green Spaces</h3>
+      <p>Discovering the beauty and importance of greener environments.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <img
+      src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80"
+      alt="Contemporary building design"
+    >
+    <div class="card-content">
+      <h3>Urban Design</h3>
+      <p>Creative ideas for more welcoming and livable cities.</p>
+    </div>
+  </article>
 </div>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80" alt="Building design">
-  <h3>Our Visual Stories</h3>
-  <p>A collection of ideas, spaces and creative inspiration.</p>
-</div>
-
+  </section>  <section class="about">
+    <h2>Design With Purpose.</h2>
+    <p>
+      We believe thoughtful design can connect people,
+      nature and the places we call home.
+    </p>
   </section>  <footer>
-    <p>My First Website | 2026</p>
+    <p>VISUALLY. | Ideas for a Greener Tomorrow</p>
+    <p>My First Website · 2026</p>
   </footer>
 </body>
 </html>
