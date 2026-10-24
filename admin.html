@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f0f7f2;
+    }
+    .login-box {
+      width: 100%;
+      max-width: 390px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+    h1 { color: #176b45; text-align: center; }
+    p { color: #555; text-align: center; }
+    label { display: block; margin-top: 18px; }
+    input {
+      width: 100%;
+      padding: 13px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #176b45;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #message { margin-top: 16px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="login-box">
+    <h1>Admin Login</h1>
+    <p>আপনার ওয়েবসাইট পরিচালনা করতে লগইন করুন</p><form id="loginForm">
+  <label for="email">ইমেইল</label>
+  <input id="email" type="email" autocomplete="username"
+         required>
+
+  <label for="password">পাসওয়ার্ড</label>
+  <input id="password" type="password"
+         autocomplete="current-password" required>
+
+  <button type="submit">লগইন করুন</button>
+  <p id="message" role="status"></p>
+</form>
+
+  </main>  <script type="module">
+    import { createClient } from
+      'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const SUPABASE_URL = 'https://zcyoordvvnojqnbgbooe.supabase.co/rest/v1/';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_X31gaaYYdPnLCc9VqpaLmA_bVtvNm1V ';
+
+    const supabase = createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      message.textContent = 'লগইন হচ্ছে...';
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        message.textContent =
+          'লগইন হয়নি। ইমেইল, পাসওয়ার্ড ও Supabase সেটিংস যাচাই করুন।';
+        return;
+      }
+
+      message.textContent = 'লগইন সফল হয়েছে।';
+    });
+  </script></body>
+</html>
