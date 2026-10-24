@@ -91,11 +91,10 @@
         password
       });
 
-      if (error) {
-        message.textContent =
-          'লগইন হয়নি। ইমেইল, পাসওয়ার্ড ও Supabase সেটিংস যাচাই করুন।';
-        return;
-      }
+     if (error) {
+message.textContent = 'লগইন ত্রুটি: ' + error.message;
+return;
+}
 
       message.textContent = 'লগইন সফল হয়েছে।';
     });
